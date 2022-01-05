@@ -5,12 +5,13 @@ import org.example.demo03.zzz.TempTest;
 import org.example.demo03.zzz.TempTest2;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ConfigurableApplicationContext;
 
-import static java.lang.System.*;
+import static java.lang.System.out;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 @EnableConfigurationProperties(My.class)
 public class Demo03Web {
 
